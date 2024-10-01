@@ -6,10 +6,10 @@ using System.Linq;
 using System.Web;
 using System.Web.Http.Controllers;
 using System.Web.Mvc;
-using QLCHThoiTrang.Models;
+using CuaHangThoiTrangHeaven.Models;
 using static System.Net.Mime.MediaTypeNames;
 
-namespace QLCHThoiTrang.Controllers
+namespace CuaHangThoiTrangHeaven.Controllers
 {
     public class ProductController : Controller
     {
