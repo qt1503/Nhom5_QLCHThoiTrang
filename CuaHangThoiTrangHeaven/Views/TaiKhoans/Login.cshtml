@@ -1,0 +1,137 @@
+﻿@model Mvc.Models.TaiKhoan
+
+@{
+    ViewBag.Title = "Đăng Nhập";
+    Layout = null; // Sử dụng layout nếu cần
+}
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/site.css" />
+    <style>
+    body {
+    background: url('@Url.Content("~/Image/background.png")');
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    }
+
+    .login-container {
+    width: 350px; /* Độ rộng của khung đăng ký */
+    margin: 120px auto; /* Canh giữa khung đăng ký với khoảng cách từ trên xuống */
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Làm cho khung đăng ký có chút trong suốt */
+    border-radius: 10px; /* Bo tròn các góc */
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2); /* Đổ bóng tạo cảm giác nổi bật */
+    text-align: center;
+    }
+
+    .login-container h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+    }
+
+    .form-group {
+    margin-bottom: 15px;
+    text-align: left; /* Căn lề trái cho tiêu đề của input */
+    }
+
+    .form-group h4 {
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: #555;
+    }
+
+    .form-control {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    }
+
+    .btn-primary {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+    }
+
+    .btn-primary:hover {
+    background-color: #0056b3;
+    }
+
+    .btn-link {
+    text-decoration: none;
+    color: #007bff;
+    }
+
+    .btn-link:hover {
+    text-decoration: underline;
+    }
+
+    .text-danger {
+    color: #ff0000;
+    font-size: 12px;
+    margin-top: 5px;
+    }
+
+    .text-center {
+    text-align: center;
+    }
+
+
+
+    </style>
+
+</head>
+<body>
+    <div class="login-container">
+        <h2>Đăng Nhập</h2>
+
+        @using (Html.BeginForm("Login", "TaiKhoans", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="form-group">
+                <h4>Email hoặc Số Điện Thoại</h4>
+                @Html.TextBox("emailOrPhone", null, new { @class = "form-control", placeholder = "Email hoặc Số điện thoại" })
+                @Html.ValidationMessage("emailOrPhone", "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                <h4>Mật Khẩu</h4>
+                @Html.PasswordFor(model => model.MatKhau, new { @class = "form-control", placeholder = "Mật khẩu" })
+                @Html.ValidationMessageFor(model => model.MatKhau, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-12">
+                    <input type="submit" value="Đăng nhập" class="btn btn-primary" />
+                </div>
+            </div>
+
+            <div class="form-group text-center">
+                @Html.ActionLink("Đăng ký", "Create", "TaiKhoans", null, new { @class = "btn btn-link" })
+            </div>
+        }
+    </div>
+
+    @if (ViewBag.error != null)
+    {
+        <div class="text-danger">@ViewBag.error</div>
+    }
+</body>
+</html>
