@@ -1,4 +1,4 @@
-namespace Mvc.Models
+namespace CuaHangThoiTrangHeaven.Models
 {
     using System;
     using System.Collections.Generic;
