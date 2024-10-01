@@ -1,0 +1,59 @@
+﻿@model List<QLCHThoiTrang.Models.SanPham>
+@{ 
+}
+
+<h2 class="text-center mb-5">Danh sách sản phẩm</h2>
+
+<div class="row mb-5">
+    <div class="col">
+        @*<a class="btn btn-primary" asp-controller="Product" asp-action="Create">Thêm sản phẩm</a>*@
+        <a href="@Url.Action("Create", "Product")" class="btn btn-primary">Thêm sản phẩm</a>
+
+    </div>
+    <div class="col">
+
+    </div>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Tên sản phẩm</th>
+            <th>Danh mục</th>
+            <th>Chi tiết</th>
+            <th>Giá</th>
+            <th>Số lượng</th>
+            <th>Hình ảnh</th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach(var sanpham in Model)
+            {
+                <tr>
+                    <td>@sanpham.MaSP</td>
+                    <td>@sanpham.TenSP</td>
+                    <td>@sanpham.MaDM</td>
+                    <td>@sanpham.ChiTiet</td>
+                    <td>@sanpham.GiaBan</td>
+                    <td>@sanpham.SoLuong</td>
+                    <td>
+                        @if (sanpham.HinhAnh != null)
+                        {
+                            <img src="@Url.Content("~/Content/Images/" + sanpham.HinhAnh)" style="width:auto; height:auto;" />
+                        }
+                    </td>
+
+                    @*<td style="white-space:nowrap">
+            <a class="btn btn-primary btn-sm" asp-controller="Product" asp-action="Edit"
+               asp-route-id="@sanpham.MaSP">Edit</a>
+            <a class="btn btn-danger btn-sm" asp-controller="Product" asp-action="Delete"
+               asp-route-id="@sanpham.MaSP">Delete</a>
+        </td>*@
+                </tr>
+            }
+    </tbody>
+    
+</table>
