@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using Mvc.Models;
+using CuaHangThoiTrangHeaven.Models;
 
-namespace Mvc.Controllers
+namespace CuaHangThoiTrangHeaven.Controllers
 {
     public class TaiKhoansController : Controller
     {
