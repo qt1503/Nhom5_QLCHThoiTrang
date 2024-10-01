@@ -13,7 +13,7 @@ namespace CuaHangThoiTrangHeaven.Controllers
 {
     public class ProductController : Controller
     {
-        QuanLyCuaHangThoiTrangEntities db = new QuanLyCuaHangThoiTrangEntities();
+        QuanLyCuaHangThoiTrang3Entities db = new QuanLyCuaHangThoiTrang3Entities();
         
 
         // GET: Product
