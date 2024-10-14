@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a49465049e30407ca2e892655a040183" Name="Diagram1">
+        <EntityTypeShape EntityType="QuanLyCuaHangThoiTrangModel.DanhMuc" Width="1.5" PointX="5.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyCuaHangThoiTrangModel.KhachHang" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyCuaHangThoiTrangModel.KhuyenMai" Width="1.5" PointX="5.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyCuaHangThoiTrangModel.LoaiKH" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyCuaHangThoiTrangModel.NhanVien" Width="1.5" PointX="3" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyCuaHangThoiTrangModel.SanPham" Width="1.5" PointX="8" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyCuaHangThoiTrangModel.TaiKhoan" Width="1.5" PointX="0.75" PointY="3.625" IsExpanded="true" />
+        <AssociationConnector Association="QuanLyCuaHangThoiTrangModel.FK__SanPham__MaDM__412EB0B6" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangThoiTrangModel.FK__KhachHang__LoaiK__45F365D3" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangThoiTrangModel.FK__KhachHang__MaTai__3B75D760" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangThoiTrangModel.FK__NhanVien__MaTaiK__3C69FB99" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

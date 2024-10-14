@@ -1,0 +1,57 @@
+﻿@Model List<QLCHThoiTrang.Models.SanPham>
+    @{
+    }
+
+    <h2 class="text-center mb-5">Danh sách sản phẩm</h2>
+
+    <div class="row mb-5">
+        <div class="col">
+            @Html.ActionLink("Thêm sản phẩm", "Create", null, new { @class = "btn btn-primary" })
+        </div>
+        <div class="col">
+        </div>
+    </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Tên sản phẩm</th>
+                <th>Danh mục</th>
+                @*<th>Chi tiết</th>*@
+                <th>Giá</th>
+                <th>Số lượng</th>
+                <th>Hình ảnh</th>
+                <th></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var sanpham in Model)
+            {
+                <tr>
+                    <td>@sanpham.MaSP</td>
+                    <td>@sanpham.TenSP</td>
+                    <td>@sanpham.DanhMuc.TenDanhMuc</td>
+                    <td>@sanpham.GiaBan</td>
+                    <td>@sanpham.SoLuong</td>
+                    <td>
+                        @if (!string.IsNullOrEmpty(sanpham.HinhAnh))
+                        {
+                            <img src="@Url.Content(sanpham.HinhAnh)" alt="@sanpham.TenSP" style="max-width:100px; max-height:100px;" />
+                        }
+                        else
+                        {
+                            <span>Không có hình ảnh</span>
+                        }
+                    </td>
+                    <td style="white-space:nowrap">
+                        <a href="@Url.Action("Edit", "Product", new { id = sanpham.MaSP })" class="btn btn-primary btn-sm">Edit</a>
+                    </td>
+                    <td style="white-space:normal">
+                        <a href="@Url.Action("Details", "Product", new { id = sanpham.MaSP })" class="btn btn-primary btn-sm">Details</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
